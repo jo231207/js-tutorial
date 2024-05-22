@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <h1>Document</h1>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -15,7 +15,124 @@
     <button onclick="document.getElementById('alert-box').style.display='block';">버튼
     </button>
     <script>
-        alert(1+1);
+        //<br/>
+        for(i=0; i<10; i++){
+            document.write('alert'+i+'<br/>');
+        }
+        
+        var li = ['a', 'b', 'c', 'd', 'e'];
+        document.write('<br/>');
+        document.write(li.pop());
+        document.write('<br/>');
+        document.write(li);
+        document.write('<br/>');
+
+
+        function welcome(){
+                return 'hello world';
+            }
+        document.write(welcome());
+        document.write('<br/>');
+
+        var vscope = 'global';
+        function fscope(){
+            vscope = 'local';
+            document.write('함수안'+vscope);
+        }
+        //지역변수 전역변수 예제
+        fscope();
+        document.write('함수밖'+vscope);
+        document.write('<br/>');
+        var process = [
+            function(input){ return input + 10;},
+            function(input){ return input * input;},
+            function(input){ return input / 2;}
+        ];
+
+        //함수의 배열
+        var input = 1;
+        for(var i = 0; i < process.length; i++){
+            document.write('i:'+ i+'input:'+input);
+            document.write('<br/>');
+            input = process[i](input);
+
+        }
+        document.write(input);
+        document.write('<br/>');
+
+        function sortNumber(a,b)
+        {
+            // 위의 예제와 비교해서 a와 b의 순서를 바꾸면 정렬순서가 반대가 된다.
+            return b-a;
+        }
+        var numbers = [20, 10, 9,8,7,6,5,4,3,2,1];
+        document.write(numbers.sort(sortNumber)); // array, [20,10,9,8,7,6,5,4,3,2,1]
+        
+        document.write('<br/><br/>');
+        function sortNumber(a,b)
+        {
+            // 위의 예제와 비교해서 a와 b의 순서를 바꾸면 정렬순서가 반대가 된다.
+            document.write('a'+a+'b'+b+'<br/>');
+            return a-b;
+
+        }
+        document.write(numbers.sort(sortNumber)); // array, [20,10,9,8,7,6,5,4,3,2,1]
+        w38ztuy6mer8!
     </script>
 </body>
-</html>ds
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Document</h1>
+</head>
+<body>
+    <div class="hello">
+        <h1>hello</h1>
+        <h1>bye</h1>
+    <h1 autofocus class="header1" id="h1"> grab me</h1>
+    <h2>wtf</h2>
+    <script>
+        const title = document.querySelector("div.hello:first-child h1");
+
+        h1.innerText = "changed by ss"
+        document.write(h1);
+        document.write("</br>");
+        document.write(h1.classname);
+        document.write("</br>");
+        document.write(h1.id);
+        document.write("</br>");
+        h1.style.color = "red";
+        h1.style.fontSize = "50px";
+        h1.addEventListener("click", handleTitleClick);
+        h1.addEventListener("mouseenter", handleMouseEnter);
+        h1.addEventListener("mouseleave",handleMouseLeave);
+        window.addEventListener("resize", handleWindowResize);
+        window.addEventListener("copy", handleCopy);
+        window.addEventListener("offline", handleOffline);
+
+        function handleWindowResize(){
+            document.body.style.backgroundColor = "tomato";
+        }
+        function handleMouseLeave()
+        {
+            h1.innerHTML = "<h3>mouse is gone</h3>";
+        }
+        function handleMouseEnter(){
+            h1.innerText = "mouse is here";
+        }
+        function handleTitleClick(){
+            h1.style.color = "blue";
+        }
+        function handleCopy(){
+            h1.innerText ="copied"
+        }
+        function handleOffline(){
+            h1.innerText = "no wifi";
+        }
+
+    </script>
+</body>
+</html>
