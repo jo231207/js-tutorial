@@ -1,9 +1,3 @@
-h1 {
-    color: cornflowerblue;
-}
-body {
-
-}
-.clicked {
-    color: tomato;
+.hidden {
+    display: none;
 }
